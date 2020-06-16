@@ -1,0 +1,11 @@
+<h1>Enter new contestant and their number of entries</h1>
+
+<%= form_tag "/contestants" do |f| %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag :entries %>
+  <%= number_field_tag :entries %>
+
+  <%= submit_tag "Submit" %>
+<% end %>
