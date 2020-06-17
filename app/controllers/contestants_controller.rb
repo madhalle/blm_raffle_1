@@ -3,6 +3,10 @@ class ContestantsController < ApplicationController
     Contestant.create!(contestant_params)
   end
 
+  def new
+    # code
+  end
+
   private
   def contestant_params
     params.permit(:name, :entries)

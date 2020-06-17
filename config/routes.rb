@@ -3,4 +3,5 @@ Rails.application.routes.draw do
    get '/', to: 'welcome#index'
 
    post '/contestants', to: 'contestants#create'
+   get '/contestants/new', to: 'contestants#new'
 end

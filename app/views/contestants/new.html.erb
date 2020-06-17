@@ -1,5 +1,4 @@
-
-<%= button_to "Add Contestant", "/contestants/new", method: :get %>
+<h1>Enter new contestant and their number of entries</h1>
 
 <%= form_tag "/contestants" do |f| %>
   <%= label_tag :name %>
@@ -10,5 +9,3 @@
 
   <%= submit_tag "Submit" %>
 <% end %>
-
-<%= button_to "Generate Random Winner", "/contestants" %>
