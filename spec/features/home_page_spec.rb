@@ -1,9 +1,14 @@
 require "rails_helper"
 RSpec.describe "when visiting the home page" do
-
-  it "visitor should be able to enter a new contestant and # of entries" do
+  before :each do
+    @contestant1 = Contestant.create!(name: "Madeleine" , entries:7 )
+    @contestant2 = Contestant.create!(name: "Henri", entries:3 )
+    @contestant3 = Contestant.create!(name: "Curtis", entries:8 )
+    @contestant4 = Contestant.create!(name: "Suzie", entries:11 )
+    @contestant5 = Contestant.create!(name: "Richard", entries:6 )
     visit "/"
-
+  end
+  it "visitor should be able to enter a new contestant and # of entries" do
     click_on "Add Contestant"
 
     expect(current_path).to eq("/contestants/new")
@@ -19,16 +24,11 @@ RSpec.describe "when visiting the home page" do
     expect(contestant.name).to eq("Madeleine")
   end
 
-
-  xit "visitor should be able to have a random winner selected" do
-    contestant1 = Contestant.create!(name: "Madeleine" , entries:7 )
-    contestant2 = Contestant.create!(name: "Henri", entries:3 )
-    contestant3 = Contestant.create!(name: "Curtis", entries:8 )
-    contestant4 = Contestant.create!(name: "Suzie", entries:11 )
-    contestant5 = Contestant.create!(name: "Richard", entries:6 )
-    visit "/"
+  it "visitor should be able to have a random winner selected" do
 
     click_on "Generate Random Winner"
+    expect(current_path).to eq("/bigwinnerenergy")
     expect(page).to have_content("Your lucky winner is:")
+
   end
 end

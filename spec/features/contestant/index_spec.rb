@@ -20,7 +20,10 @@ RSpec.describe "when visiting the contestants index page" do
     expect(page).to have_content(@contestant4.name)
     expect(page).to have_content(@contestant5.name)
   end
-  xit "should display total entries & contestants" do
+  it "should display total entries & contestants" do
+    visit "/contestants"
 
+    expect(page).to have_content(5)
+    expect(page).to have_content(35)
   end
 end
