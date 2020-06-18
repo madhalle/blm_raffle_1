@@ -7,6 +7,10 @@ class ContestantsController < ApplicationController
     # code
   end
 
+  def index
+    @contestants = Contestant.all
+  end
+
   private
   def contestant_params
     params.permit(:name, :entries)

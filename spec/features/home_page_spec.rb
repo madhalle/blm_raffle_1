@@ -20,7 +20,7 @@ RSpec.describe "when visiting the home page" do
   end
 
 
-  it "visitor should be able to have a random winner selected" do
+  xit "visitor should be able to have a random winner selected" do
     contestant1 = Contestant.create!(name: "Madeleine" , entries:7 )
     contestant2 = Contestant.create!(name: "Henri", entries:3 )
     contestant3 = Contestant.create!(name: "Curtis", entries:8 )

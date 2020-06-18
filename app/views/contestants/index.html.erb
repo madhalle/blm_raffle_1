@@ -1,0 +1,8 @@
+<h1>All yo contestants </h1>
+
+<%@contestants.each do |contestant| %>
+  <p><b>Name:</b> <%= contestant.name %>, <b>Entries:</b> <%=contestant.entries %></p>
+<% end%>
+
+<h3><b>Total Entries:</b> <%= @contestants.total_entries %></h3>
+<h3><b>Total Contestants:</b> <%=@contestants.count %></h3>
